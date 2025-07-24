@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel = "manifest" href = "/manifest.json">
+
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/service-worker.js')
+            .then(reg => console.log('Service Worker зарегистрирован'))
+            .catch(err => console.log('Ошибка:', err));
+        });
+      }
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Первый компьютер - ENIAC</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Первый компьютер</a></li>
+                    <li><a href="supercomputers.html">Суперкомпьютеры</a></li>
+                    <li><a href="modern.html">Современные ПК</a></li>
+                    <li><a href="forma1.php">Обратная связь</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <article class="computer-info">
+            <h1>ENIAC - первый электронный компьютер</h1>
+            
+            <p>ENIAC (Electronic Numerical Integrator and Computer) был создан в 1945 году и считается первым электронным компьютером общего назначения. Этот гигант занимал целую комнату размером 9×15 метров и весил 27 тонн!</p>
+
+            <div class="specs">
+                <h3>Основные характеристики:</h3>
+                <ul>
+                    <li><strong>Год создания:</strong> 1945</li>
+                    <li><strong>Размеры:</strong> 30 метров в длину</li>
+                    <li><strong>Вес:</strong> 27 тонн</li>
+                    <li><strong>Элементная база:</strong> 17,468 электронных ламп</li>
+                    <li><strong>Потребляемая мощность:</strong> 150 кВт</li>
+                    <li><strong>Тактовая частота:</strong> 100 кГц</li>
+                    <li><strong>Производительность:</strong> 357 операций умножения в секунду</li>
+                    <li><strong>Память:</strong> 20 аккумуляторов по 10 десятичных разрядов</li>
+                </ul>
+            </div>
+            
+            <p>ENIAC разрабатывался для решения задач баллистики Армии США. Программирование осуществлялось путем переключения кабелей и установки переключателей, что занимало дни и даже недели. Несмотря на свои размеры, его вычислительная мощность была меньше, чем у современных калькуляторов.</p>
+            
+            <div class="gallery">
+                <img src="1_1.jpg" alt="ENIAC - внешний вид">
+                <img src="1_2.jpg" alt="Внутреннее устройство ENIAC">
+                <img src="1_3.jpg" alt="Программирование ENIAC">
+            </div>
+        </article>
+    </main>
+
+</body>
+</html>
