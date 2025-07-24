@@ -20,13 +20,12 @@ const urlsToCache = [
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME)
-      .then(cache => cache.addAll(urlsToCache))
-  );
-});
-
-self.addEventListener('fetch', event => {
-  event.respondWith(
-    caches.match(event.request)
-      .then(response => response || fetch(event.request))
+      .then(cache => {
+        console.log('Кэш открыт');
+        return cache.addAll(urlsToCache.map(url => new Request(url, {credentials: 'same-origin'})));
+      })
+      .catch(err => {
+          console.error('Ошибка кэширования:', err);
+      })
   );
 });
